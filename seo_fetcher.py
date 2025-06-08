@@ -1,22 +1,11 @@
-# def get_seo_data(keyword):
-#     # Mock data
-#     return {
-#         'search_volume': 2400,
-#         'keyword_difficulty': 45,
-#         'avg_cpc': 1.25
-#     }
-
-# seo_fetcher.py
-
 def fetch_seo_data(keyword: str) -> dict:
     """
-    Mocks SEO data for a given keyword.
-    In a real-world scenario, this would integrate with an SEO API (e.g., Ahrefs, SEMrush).
+    this function mocks seo data for a given keyword
     """
-    # Normalize keyword for consistent mocking
-    normalized_keyword = keyword.lower().strip()
+    
+    normalized_keyword = keyword.lower().strip() # normalize keyword for consistent mocking
 
-    # Mock data based on a few example keywords
+    # mock data based on a few example keywords
     if "wireless earbuds" in normalized_keyword:
         return {
             "search_volume": 110000,
@@ -36,15 +25,15 @@ def fetch_seo_data(keyword: str) -> dict:
             "avg_cpc": 0.90
         }
     else:
-        # Default mock data for any other keyword
+        # default mock data for any other keyword
         return {
-            "search_volume": 10000 + len(keyword) * 100, # Varies by keyword length
-            "keyword_difficulty": 50 + len(keyword) % 20, # Varies somewhat
+            "search_volume": 10000 + len(keyword) * 100, # varies by keyword length
+            "keyword_difficulty": 50 + len(keyword) % 20, # varies somewhat
             "avg_cpc": 0.50 + (len(keyword) % 5) * 0.1
         }
 
 if __name__ == '__main__':
-    # Simple test cases for the SEO fetcher
+    # simple test cases for the seo fetcher
     print("SEO Data for 'wireless earbuds':", fetch_seo_data("wireless earbuds"))
     print("SEO Data for 'best laptops':", fetch_seo_data("best laptops"))
     print("SEO Data for 'unique dog names':", fetch_seo_data("unique dog names"))
